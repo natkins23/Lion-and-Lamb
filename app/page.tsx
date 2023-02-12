@@ -10,20 +10,29 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center   py-10">
             <div className="flex gap-10">
                 <Image src="/lion.png" alt="lion" width={100} height={100} />
-                <h1 className=" relative  text-4xl py-10 inter.className">
+                <h1 className=" relative  font-cursive  text-4xl py-10 inter.className">
                     Lion and Lamb
                 </h1>
                 <Image src="/sheep.png" alt="sheep" width={100} height={100} />
             </div>
             <div>
-                <audio controls autoPlay id="audio">
+                <audio controls id="audio">
                     <source src="prey.mp3" />
                     Your browser does not support the <code>audio</code>{' '}
                     element.
                 </audio>
             </div>
-            <section className="py-10 ">
-                <p>
+            <section className="relative flex flex-col items-center py-10">
+                <Image
+                    className="relative "
+                    src="/chess.png"
+                    alt="lion"
+                    width={450}
+                    height={450}
+                />
+                <br />
+
+                <p className="relative  ">
                     It began with a game, all just in fun, <br />
                     Who knew that my heart would so soon succumb, indeed a new
                     love had begun! <br />
@@ -38,7 +47,8 @@ export default function Home() {
                     Little did he know, his appearance seemed extreme. <br />
                 </p>
                 <br />
-
+                <Image src="/roar.gif" alt="lion" width={450} height={450} />
+                <br />
                 <p>
                     The lamb, so gentle, seeks true love divine, <br />
                     At first, she saw flaws, she couldn&apos;t entwine <br />
@@ -46,7 +56,6 @@ export default function Home() {
                     She didn&apos;t even care that he was well endowed, <br />
                 </p>
                 <br />
-
                 <p>
                     But soon time went by, her perspective did shift, <br />
                     She realized his strength was a gift to uplift. <br />
@@ -55,7 +64,8 @@ export default function Home() {
                     store. <br />
                 </p>
                 <br />
-
+                <Image src="/king.png" alt="king" width={450} height={450} />
+                <br />
                 <p>
                     Her heart opened wide, a warmth filled her soul, <br />
                     Her kindness the catalyst, her light he extolled. <br />
@@ -65,6 +75,15 @@ export default function Home() {
                 </p>
                 <br />
 
+                <br />
+                <Image
+                    src="/sitting.png"
+                    alt="sitting"
+                    width={450}
+                    height={450}
+                />
+                <br />
+
                 <p>
                     The lion, once fierce, now purrs with her touch, <br />
                     Her love was his cure, grateful he was, for so much! <br />
@@ -72,7 +91,13 @@ export default function Home() {
                     No! A bond formed by love, stronger than any force at play.
                 </p>
                 <br />
-
+                <Image
+                    src="/dance.png"
+                    alt="sitting"
+                    width={450}
+                    height={450}
+                />
+                <br />
                 <p>
                     Their steps in perfect rhythm, a dance of love, <br />
                     The lion leaps forward, four left paws from above, <br />
@@ -81,13 +106,17 @@ export default function Home() {
                     beasts.
                 </p>
                 <br />
-
                 <p>
-                    A lion and a lamb, forever in chase No longer predator, no
-                    longer prey, <br />
+                    A lion and a lamb, forever in chase
+                    <br />
+                    No longer predator, no longer prey, <br />
                     Together they roamed, in an endless embrace.
                 </p>
             </section>
+            <video autoPlay muted width="450" height="auto" loop>
+                <source src="running.mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
     )
 }

@@ -4,6 +4,9 @@
 
 @layer body {
     body {
-        @apply bg-red-300;
+        @apply bg-gradient-to-br from-red-300 to-red-700;
     }
-}       
+    p {
+        @apply text-center font-semibold text-2xl;
+    }
+}
