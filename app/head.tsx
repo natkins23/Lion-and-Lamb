@@ -1,7 +1,7 @@
 export default function Head() {
     return (
         <>
-            <title>An Ode to Beasts</title>
+            <title>P&P: An Ode to Beasts</title>
             <meta
                 content="width=device-width, initial-scale=1"
                 name="viewport"

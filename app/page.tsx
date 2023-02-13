@@ -8,12 +8,36 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center   py-10">
-            <div className="flex gap-10">
-                <Image src="/lion.png" alt="lion" width={100} height={100} />
-                <h1 className=" relative  font-cursive  text-4xl py-10 inter.className">
-                    Lion and Lamb
-                </h1>
-                <Image src="/sheep.png" alt="sheep" width={100} height={100} />
+            <div className="flex gap-10 justify-center w-screen ">
+                <div className="relative">
+                    <Image
+                        src="/lion.png"
+                        alt="lion"
+                        width={200}
+                        height={200}
+                        className="relative"
+                    />
+                </div>
+                <div className="flex flex-col relative  justify-center">
+                    <h3 className=" relative text-center  text-2xl  ">
+                        An Ode To Beasts
+                    </h3>
+                    <h1 className=" relative text-center text-6xl  ">
+                        Predator & Prey:
+                    </h1>
+                    <h2 className=" relative text-center text-4xl ">
+                        The Perfect Match?
+                    </h2>
+                </div>
+                <div className="relative">
+                    <Image
+                        src="/sheep.png"
+                        alt="sheep"
+                        width={200}
+                        height={200}
+                        className="relative"
+                    />
+                </div>
             </div>
             <div>
                 <audio controls id="audio">
@@ -23,15 +47,6 @@ export default function Home() {
                 </audio>
             </div>
             <section className="relative flex flex-col items-center py-10">
-                <Image
-                    className="relative "
-                    src="/chess.png"
-                    alt="lion"
-                    width={450}
-                    height={450}
-                />
-                <br />
-
                 <p className="relative  ">
                     It began with a game, all just in fun, <br />
                     Who knew that my heart would so soon succumb, indeed a new
@@ -39,6 +54,15 @@ export default function Home() {
                     With each roll of the dice, every robber&apos;s move, <br />
                     You took hold of my heart, I had everything to prove,
                 </p>
+
+                <br />
+                <Image
+                    className="relative "
+                    src="/chess.png"
+                    alt="lion"
+                    width={450}
+                    height={450}
+                />
                 <br />
                 <p>
                     Lion and lamb, predator and prey, <br />
