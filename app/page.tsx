@@ -2,8 +2,14 @@
 
 import Image from 'next/image'
 import AudioPlayer from '@/components/AudioPlayer'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+    const router = useRouter()
+    const [keypadValue, setKeypadValue] = useState('')
+    const [passcode, setPasscode] = useState(0)
+
     const hideImages = () => {
         const images = document.querySelectorAll('.artsy')
         if (images[0].classList.contains('hidden')) {
@@ -20,6 +26,34 @@ export default function Home() {
             })
         }
     }
+
+    function addKeypadValue(value: number) {
+        setKeypadValue((prevValue) => prevValue + value.toString())
+    }
+
+    useEffect(() => {
+        console.log(keypadValue)
+        setPasscode(
+            Math.floor(
+                (new Date().getTime() - new Date('2022-09-25').getTime()) /
+                    (1000 * 60 * 60 * 24)
+            )
+        )
+        if (keypadValue.length === passcode.toString().length) {
+            if (keypadValue === passcode.toString()) {
+                // Redirect to the target page
+                router.push('/honor')
+            } else {
+                console.log(passcode)
+                // Clear the keypad value and display an error message
+                setKeypadValue('')
+                alert(
+                    'Already forgot the days that go by? Try again my love...'
+                )
+            }
+        }
+    }, [keypadValue, passcode, router])
+
     return (
         <div className="flex flex-col justify-center items-center  px-0 lg:py-10">
             <div className="flex lg:gap-10 h-[20vh] md:h-[30vh] w-screen justify-evenly items-center">
@@ -33,10 +67,14 @@ export default function Home() {
                         onClick={() => {
                             hideImages()
                         }}
+                        title="ROAR!"
                     />
                 </div>
                 <div className="flex flex-col relative items-center justify-center">
-                    <h1 className=" text-gray-900  relative text-center text-4xl md:text-6xl lg:text-8xl font-bold italic ">
+                    <h1
+                        className=" text-gray-900  relative text-center text-4xl md:text-6xl lg:text-8xl font-bold italic  "
+                        title="I'll always keep track of the days the gone by!"
+                    >
                         <span className="block 2xl:inline">Predator</span>{' '}
                         <span className="block 2xl:inline">&</span>
                         <span className="block 2xl:inline">{` `}Prey</span>
@@ -51,6 +89,7 @@ export default function Home() {
                         onClick={() => {
                             showImages()
                         }}
+                        title="BAAA!"
                     />
                 </div>
             </div>
@@ -65,6 +104,9 @@ export default function Home() {
                         alt="chess"
                         fill
                         style={{ objectFit: 'contain' }}
+                        onClick={() => {
+                            addKeypadValue(0)
+                        }}
                     />
                 </div>
                 <p className="">
@@ -74,12 +116,15 @@ export default function Home() {
                     With each roll of the dice, every robber&apos;s move, <br />
                     You took hold of my heart, I had everything to prove!
                 </p>
-                <div className="artsy  hidden">
+                <div className="artsy hidden">
                     <Image
                         className="absolute "
-                        src="/nudge.png"
-                        alt="nudge"
+                        src="/gentleman2.png"
+                        alt="gentleman2"
                         fill
+                        onClick={() => {
+                            addKeypadValue(1)
+                        }}
                     />
                 </div>
                 <p>
@@ -91,25 +136,33 @@ export default function Home() {
                 <div className="artsy hidden">
                     <Image
                         className="absolute "
-                        src="/roar.gif"
-                        alt="roar"
+                        src="/scary.png"
+                        alt="scary"
                         fill
+                        onClick={() => {
+                            addKeypadValue(2)
+                        }}
                     />
                 </div>
+
                 <p>
                     The lamb, so gentle, seeks true love divine, <br />
                     At first, she saw flaws, she couldn&apos;t untwine <br />
                     His teeth were too sharp! His roar was too loud! <br />
                     She didn&apos;t even care that he was well endowed...
                 </p>
-                <div className="artsy hidden">
+                <div className="artsy  hidden">
                     <Image
                         className="absolute "
-                        src="/still.png"
-                        alt="still"
+                        src="/nudge.png"
+                        alt="nudge"
                         fill
+                        onClick={() => {
+                            addKeypadValue(3)
+                        }}
                     />
                 </div>
+
                 <p>
                     But soon time went by, her perspective did shift, <br />
                     She realized his strength was a gift to uplift. <br />
@@ -123,6 +176,9 @@ export default function Home() {
                         src="/king.png"
                         alt="king"
                         fill
+                        onClick={() => {
+                            addKeypadValue(4)
+                        }}
                     />
                 </div>
                 <p>
@@ -138,20 +194,39 @@ export default function Home() {
                         src="/sitting.png"
                         alt="lion"
                         fill
+                        onClick={() => {
+                            addKeypadValue(5)
+                        }}
                     />
                 </div>
                 <p>
                     The lion, once fierce, now purrs with her touch, <br />
                     Her love was his cure, grateful he was, for so much! <br />
-                    Was He still a hunter, She still his prey? <br />
-                    No! A bond formed by love, stronger than any force at play.
                 </p>
                 <div className="artsy  hidden">
                     <Image
                         className="absolute  "
-                        src="/dance.png"
-                        alt="lion"
+                        src="/toys.png"
+                        alt="toys"
                         fill
+                        onClick={() => {
+                            addKeypadValue(6)
+                        }}
+                    />
+                </div>
+                <p>
+                    Was He still a hunter, She still his prey? <br />
+                    No! A bond formed by love, stronger than any force at play.
+                </p>
+                <div className="artsy hidden">
+                    <Image
+                        className="absolute "
+                        src="/watercolor.png"
+                        alt="watercolor"
+                        fill
+                        onClick={() => {
+                            addKeypadValue(7)
+                        }}
                     />
                 </div>
                 <p>
@@ -164,9 +239,12 @@ export default function Home() {
                 <div className="artsy hidden">
                     <Image
                         className="absolute "
-                        src="/toys.png"
-                        alt="toys"
+                        src="/dance.png"
+                        alt="dance"
                         fill
+                        onClick={() => {
+                            addKeypadValue(8)
+                        }}
                     />
                 </div>
                 <p>
@@ -182,6 +260,9 @@ export default function Home() {
                         width="auto"
                         height="auto"
                         loop
+                        onClick={() => {
+                            addKeypadValue(9)
+                        }}
                     >
                         <source src="running.mp4" />
                         Your browser does not support the video tag.

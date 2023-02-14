@@ -29,7 +29,8 @@
     }
 }
 
-body {
+body,
+.honor-bg {
     background: linear-gradient(-45deg, #b95d41, #c43169, #25a3d1, #1cb893);
     background-size: 2000% 2000%;
     animation: gradient 30s ease infinite;
