@@ -176,7 +176,7 @@ export default function Home() {
                 </p>
                 <div className="artsy hidden">
                     <video
-                        className="absolute "
+                        className="absolute  pointer-events-none"
                         autoPlay
                         muted
                         width="auto"
