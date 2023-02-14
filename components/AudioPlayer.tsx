@@ -22,7 +22,6 @@ const AudioPlayer = ({ src }: { src: string }) => {
         if (audioRef.current) {
             audioRef.current.play()
             setIsPlaying(!isPlaying)
-            console.log('playing')
         }
     }
 
@@ -30,18 +29,19 @@ const AudioPlayer = ({ src }: { src: string }) => {
         if (audioRef.current) {
             audioRef.current.pause()
             setIsPlaying(false)
-            console.log('paused')
         }
     }
 
     const handleEnded = () => {
-        console.log('ended')
         setIsPlaying(false)
     }
 
     return (
         <>
-            <div className="relative cursor-pointer pt-5" onClick={playButton}>
+            <div
+                className="relative cursor-pointer md:py-10"
+                onClick={playButton}
+            >
                 <HeartIcon
                     className={`${
                         isPlaying && `animate-heartbeat`

@@ -6,7 +6,10 @@ import AudioPlayer from '@/components/AudioPlayer'
 export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center  px-0 lg:py-10">
-            <div className="flex lg:gap-10 h-[50vh] w-screen justify-evenly items-center">
+            <h3 className=" relative text-center  text-xl lg:text-2xl  pt-3">
+                An Ode To Beasts
+            </h3>
+            <div className="flex lg:gap-10 h-[20vh] w-screen justify-evenly items-center">
                 <div className="animalIcon">
                     <Image
                         src="/lion.png"
@@ -17,17 +20,11 @@ export default function Home() {
                     />
                 </div>
                 <div className="flex flex-col relative items-center justify-center">
-                    <h3 className=" relative text-center  text-xl lg:text-2xl  ">
-                        An Ode To Beasts
-                    </h3>
                     <h1 className=" relative text-center text-4xl lg:text-6xl font-bold italic md:py-2">
                         <span className="block ">Predator</span>{' '}
                         <span className="block ">&</span>
-                        <span className="block ">{` `}Prey:</span>
+                        <span className="block ">{` `}Prey</span>
                     </h1>
-                    <h2 className=" italic relative text-center text-[1.3em] lg:text-4xl w-fit  ">
-                        A Perfect Match?
-                    </h2>
                 </div>
                 <div className=" animalIcon ">
                     <Image
@@ -39,9 +36,9 @@ export default function Home() {
                 </div>
             </div>
 
-                <AudioPlayer src="prey.mp3"></AudioPlayer>
+            <AudioPlayer src="prey.mp3"></AudioPlayer>
 
-            <section className="relative flex flex-col items-center py-10">
+            <section className="relative flex flex-col items-center py-2">
                 <p className="relative  ">
                     It began with a game, all just in fun, <br />
                     Who knew that my heart would so soon succumb, indeed a new

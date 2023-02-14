@@ -7,7 +7,7 @@
         @apply bg-gradient-to-br from-red-600 to-red-200;
     }
     p {
-        @apply text-center font-semibold italic text-gray-900 text-base md:text-lg lg:text-2xl;
+        @apply text-center font-semibold italic text-gray-900 sm:text-sm  md:text-lg lg:text-2xl px-2;
     }
     p,
     div,
