@@ -28,7 +28,7 @@ export default function Home() {
                         src="/lion.png"
                         alt="lion"
                         fill
-                        style={{ objectFit: 'contain' }}
+                        style={{ objectFit: 'cover' }}
                         className="relative"
                         onClick={() => {
                             hideImages()
@@ -63,11 +63,11 @@ export default function Home() {
                         className="absolute"
                         src="/chess.png"
                         alt="chess"
-                        fill    
+                        fill
                         style={{ objectFit: 'contain' }}
                     />
                 </div>
-                <p className="relative ">
+                <p className="">
                     It began with a game, all just in good fun, <br />
                     Who knew that a heart could so quickly succumb, indeed a new
                     love had begun! <br />
@@ -161,7 +161,6 @@ export default function Home() {
                     reminder that love knows no bounds and can conquer all
                     beasts.
                 </p>
-
                 <div className="artsy hidden">
                     <Image
                         className="absolute "

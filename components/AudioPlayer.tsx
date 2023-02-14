@@ -33,7 +33,7 @@ const AudioPlayer = ({ src }: { src: string }) => {
     return (
         <>
             <div
-                className="relative cursor-pointer md:pt-10 pb-20 lg:pb-15"
+                className="relative cursor-pointer py-5 md:py-12 lg:pb-20 xl:py-20"
                 onClick={playButton}
             >
                 <HeartIcon

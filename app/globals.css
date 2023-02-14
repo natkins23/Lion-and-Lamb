@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer body {
+    body {
+        @apply overflow-x-hidden;
+    }
     p {
-        @apply text-center px-5 py-5 font-semibold italic text-gray-200 sm:text-sm  md:text-lg lg:text-2xl xl:text-3xl;
+        @apply relative w-[20rem] sm:w-[23rem] md:w-screen text-center  py-5 font-semibold italic text-gray-300 sm:text-sm  md:text-lg lg:text-2xl xl:text-3xl;
     }
     p,
     div,
@@ -22,13 +25,11 @@
         @apply w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-52 xl:h-52 2xl:w-60 2xl:h-60 text-red-900 drop-shadow-2xl;
     }
     .artsy {
-        @apply relative h-[450px] w-[450px] md:h-[550px] md:w-[550px]  lg:h-[650px] lg:w-[650px] xl:h-[750px] xl:w-[750px];
+        @apply relative h-[320px] w-[320px] md:h-[550px] md:w-[550px]  lg:h-[650px] lg:w-[650px] xl:h-[750px] xl:w-[750px];
     }
 }
 
 body {
-    overflow-x: hidden;
-
     background: linear-gradient(-45deg, #b95d41, #c43169, #25a3d1, #1cb893);
     background-size: 2000% 2000%;
     animation: gradient 30s ease infinite;
