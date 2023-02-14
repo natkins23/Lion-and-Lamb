@@ -6,9 +6,6 @@ import AudioPlayer from '@/components/AudioPlayer'
 export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center  px-0 lg:py-10">
-            <h3 className=" relative text-center  text-xl lg:text-2xl  pt-3">
-                An Ode To Beasts
-            </h3>
             <div className="flex lg:gap-10 h-[20vh] w-screen justify-evenly items-center">
                 <div className="animalIcon">
                     <Image

@@ -12,18 +12,6 @@ module.exports = {
             },
             keyframes: {
                 heartbeat: {
-                    // '0%': {
-                    //     transform: 'scale(2)',
-                    // },
-                    // '14%': {
-                    //     transform: 'scale(.1)',
-                    // },
-                    // '20%': {
-                    //     transform: 'scale(1.3)',
-                    // },
-                    // '28%': {
-                    //     transform: 'scale(1)',
-                    // },
                     '25%, 50%': {
                         transform: 'scale(2)',
                         backgroundColor: 'green',
@@ -34,6 +22,14 @@ module.exports = {
                         opacity: '1',
                     },
                 },
+            },
+            fontSize: {
+                xs: [
+                    '.75rem',
+                    {
+                        lineHeight: '1rem',
+                    },
+                ],
             },
         },
     },
