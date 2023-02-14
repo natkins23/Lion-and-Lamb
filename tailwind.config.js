@@ -8,13 +8,12 @@ module.exports = {
     theme: {
         extend: {
             animation: {
-                heartbeat: 'ping 1.5s cubic-bezier(.8 , 2, .4, .1) infinite',
+                heartbeat: 'ping 1.4s cubic-bezier(.8 , 2, .6, .1) infinite',
             },
             keyframes: {
                 heartbeat: {
                     '25%, 50%': {
                         transform: 'scale(2)',
-                        backgroundColor: 'green',
                         opacity: '1',
                     },
                     '75%, 100%': {

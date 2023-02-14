@@ -3,11 +3,8 @@
 @tailwind utilities;
 
 @layer body {
-    body {
-        @apply bg-gradient-to-br from-red-600 to-red-200;
-    }
     p {
-        @apply text-center font-semibold italic text-gray-900 sm:text-sm  md:text-lg lg:text-2xl px-2;
+        @apply text-center px-5 py-5 font-semibold italic text-gray-200 sm:text-sm  md:text-lg lg:text-2xl xl:text-3xl;
     }
     p,
     div,
@@ -18,10 +15,34 @@
         @apply transition-all  duration-100;
     }
     .animalIcon {
-        @apply relative w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-60 lg:h-60 xl:w-72 xl:h-72;
+        @apply relative cursor-pointer w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-60 lg:h-60 xl:w-72 xl:h-72;
     }
 
     .heartIcon {
-        @apply w-20 h-20 md:w-32 md:h-32 text-red-900;
+        @apply w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-52 xl:h-52 2xl:w-60 2xl:h-60 text-red-900 drop-shadow-2xl;
+    }
+    .artsy {
+        @apply relative h-[450px] w-[450px] md:h-[550px] md:w-[550px]  lg:h-[650px] lg:w-[650px] xl:h-[750px] xl:w-[750px];
+    }
+}
+
+body {
+    overflow-x: hidden;
+
+    background: linear-gradient(-45deg, #b95d41, #c43169, #25a3d1, #1cb893);
+    background-size: 2000% 2000%;
+    animation: gradient 30s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }

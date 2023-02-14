@@ -3,8 +3,6 @@
 import React from 'react'
 import { HeartIcon } from '@heroicons/react/24/solid'
 
-// import FavoriteIcon from '@mui/icons-material/Favorite'
-
 const AudioPlayer = ({ src }: { src: string }) => {
     const [isPlaying, setIsPlaying] = React.useState(false)
     const audioRef = React.useRef<HTMLAudioElement>(null)
@@ -32,14 +30,10 @@ const AudioPlayer = ({ src }: { src: string }) => {
         }
     }
 
-    const handleEnded = () => {
-        setIsPlaying(false)
-    }
-
     return (
         <>
             <div
-                className="relative cursor-pointer md:py-10"
+                className="relative cursor-pointer md:pt-10 pb-20 lg:pb-15"
                 onClick={playButton}
             >
                 <HeartIcon
@@ -48,33 +42,9 @@ const AudioPlayer = ({ src }: { src: string }) => {
                     } absolute heartIcon`}
                 ></HeartIcon>
                 <HeartIcon className={`heartIcon`}></HeartIcon>
-                {/* <FavoriteIcon
-                        className={`${
-                            isPlaying && `animate-heartbeat`
-                        } absolute  h-20 w-20  text-red-900  `}
-                    ></FavoriteIcon>
-                    <FavoriteIcon
-                        className={` absolute w-20  bg-transparent text-red-900 h-20 `}
-                    ></FavoriteIcon> */}
             </div>
 
-            {/* <div
-                    className={`${
-                        isPlaying && `animate-heartbeat`
-                    } absolute rounded-full w-52 h-10 bg-red-900`}
-                ></div> */}
-            {/* <div
-                    className={`${
-                        isPlaying && `animate-ping`
-                    } absolute rounded-full w-52 h-10 bg-red-900`}
-                ></div> */}
-            <audio
-                controls
-                ref={audioRef}
-                onEnded={handleEnded}
-                src={src}
-                className="absolute hidden"
-            />
+            <audio ref={audioRef} src={src} className="absolute hidden" />
         </>
     )
 }
