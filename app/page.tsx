@@ -1,51 +1,46 @@
-import Image from 'next/image'
-import ReactPlayer from 'react-player'
-import React from 'react'
-import { Inter } from '@next/font/google'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image'
+import AudioPlayer from '@/components/AudioPlayer'
 
 export default function Home() {
     return (
-        <div className="flex flex-col justify-center items-center   py-10">
-            <div className="flex gap-10 justify-center w-screen ">
-                <div className="relative">
+        <div className="flex flex-col justify-center items-center  px-0 lg:py-10">
+            <div className="flex lg:gap-10 h-[50vh] w-screen justify-evenly items-center">
+                <div className="animalIcon">
                     <Image
                         src="/lion.png"
                         alt="lion"
-                        width={200}
-                        height={200}
+                        fill
+                        style={{ objectFit: 'contain' }}
                         className="relative"
                     />
                 </div>
-                <div className="flex flex-col relative  justify-center">
-                    <h3 className=" relative text-center  text-2xl  ">
+                <div className="flex flex-col relative items-center justify-center">
+                    <h3 className=" relative text-center  text-xl lg:text-2xl  ">
                         An Ode To Beasts
                     </h3>
-                    <h1 className=" relative text-center text-6xl  ">
-                        Predator & Prey:
+                    <h1 className=" relative text-center text-4xl lg:text-6xl font-bold italic md:py-2">
+                        <span className="block ">Predator</span>{' '}
+                        <span className="block ">&</span>
+                        <span className="block ">{` `}Prey:</span>
                     </h1>
-                    <h2 className=" relative text-center text-4xl ">
-                        The Perfect Match?
+                    <h2 className=" italic relative text-center text-[1.3em] lg:text-4xl w-fit  ">
+                        A Perfect Match?
                     </h2>
                 </div>
-                <div className="relative">
+                <div className=" animalIcon ">
                     <Image
                         src="/sheep.png"
                         alt="sheep"
-                        width={200}
-                        height={200}
+                        fill
                         className="relative"
                     />
                 </div>
             </div>
-            <div>
-                <audio controls id="audio">
-                    <source src="prey.mp3" />
-                    Your browser does not support the <code>audio</code>{' '}
-                    element.
-                </audio>
-            </div>
+
+                <AudioPlayer src="prey.mp3"></AudioPlayer>
+
             <section className="relative flex flex-col items-center py-10">
                 <p className="relative  ">
                     It began with a game, all just in fun, <br />

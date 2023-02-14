@@ -4,9 +4,24 @@
 
 @layer body {
     body {
-        @apply bg-gradient-to-br from-red-300 to-red-700;
+        @apply bg-gradient-to-br from-red-600 to-red-200;
     }
     p {
-        @apply text-center font-semibold text-2xl;
+        @apply text-center font-semibold italic text-gray-900 text-base md:text-lg lg:text-2xl;
+    }
+    p,
+    div,
+    span,
+    h1,
+    h2,
+    h3 {
+        @apply transition-all  duration-100;
+    }
+    .animalIcon {
+        @apply relative w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44 lg:w-60 lg:h-60 xl:w-72 xl:h-72;
+    }
+
+    .heartIcon {
+        @apply w-20 h-20 md:w-32 md:h-32 text-red-900;
     }
 }
